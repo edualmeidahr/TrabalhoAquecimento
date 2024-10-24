@@ -84,6 +84,43 @@ std::vector<std::string> lerLivro(const std::string& nomeArquivo) {
     return livro;
 }
 
+std::unordered_map<std::string, int> processarDocumento(const std::vector<std::string>& termosDocumento) {
+    std::unordered_map<std::string, int> tf;
+
+    // Calcula a frequência de cada termo no documento
+    for (const auto& termo : termosDocumento) {
+        tf[termo]++;
+    }
+
+    return tf;
+}
+
+std::unordered_map<std::string, double> calcularIDF(const std::vector<std::unordered_map<std::string, int>>& documentos) {
+    std::unordered_map<std::string, int> documentoComTermo;
+    int totalDocumentos = documentos.size();
+
+    // Contar quantos documentos contêm cada termo
+    for (const auto& doc : documentos) {
+        std::set<std::string> termosUnicos; // Usado para contar termos únicos por documento
+        for (const auto& [termo, _] : doc) {
+            termosUnicos.insert(termo);
+        }
+        for (const auto& termo : termosUnicos) {
+            documentoComTermo[termo]++;
+        }
+    }
+
+    // Calcular o IDF para cada termo
+    std::unordered_map<std::string, double> idf;
+    for (const auto& [termo, numDocumentos] : documentoComTermo) {
+        idf[termo] = log(static_cast<double>(totalDocumentos) / numDocumentos);
+    }
+
+    return idf;
+}
+
+
+
 
 // Função para salvar o conteúdo processado em um arquivo
 void salvarLivroProcessado(const std::vector<std::string>& livro, const std::string& nomeArquivoSaida) {
