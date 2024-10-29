@@ -1,5 +1,6 @@
 # TF-IDF - AEDS II
 ![INVERSE DOCUMENT FREQUENCY](https://s3.ezgif.com/tmp/ezgif-3-d75e0f657b.gif)
+
 ## 1. Introdução
 ### 1.1 Objetivo do Projeto
 O principal objetivo deste projeto é implementar um sistema de ranqueamento de documentos utilizando o algoritmo TF/IDF (Term Frequency - Inverse Document Frequency). Esse sistema é projetado para processar um conjunto de documentos, calcular a relevância de cada um deles em relação a uma frase de pesquisa específica e ranquear os documentos conforme essa relevância.
@@ -74,7 +75,7 @@ Para facilitar o entendimento dos principais conceitos utilizados, desenvolvemos
 
 - **Term Frequency (TF)**: Refere-se à frequência com que um termo aparece em um documento específico. Esse valor representa a importância de um termo dentro de um único documento.
 
-    <img src="https://cdn.discordapp.com/attachments/1300123706013650966/1300949897465298984/TF.png?ex=6722b382&is=67216202&hm=d0c2b69c87088730878770714ba74af1d7fbf7eb3c55f86216caf47c96294e36&" alt="TF" width="800" />
+    <img src="https://media.discordapp.net/attachments/1300123706013650966/1300949897465298984/TF.png?ex=6722b382&is=67216202&hm=d0c2b69c87088730878770714ba74af1d7fbf7eb3c55f86216caf47c96294e36&=&format=webp&quality=lossless&width=1118&height=559" alt="TF" width="800" />
 
 - **Inverse Document Frequency (IDF)**: Mede a importância de um termo em relação ao conjunto total de documentos. Quanto mais raro for o termo nos documentos, maior será seu valor de IDF, destacando termos específicos.
 
