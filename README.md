@@ -1,5 +1,5 @@
 # TF-IDF - AEDS II
-![INVERSE DOCUMENT FREQUENCY](https://s3.ezgif.com/tmp/ezgif-3-d75e0f657b.gif)
+![CAPA](https://i.ibb.co/GQBHCGL/ezgif-3-d75e0f657b.gif)
 
 ## 1. Introdução
 ### 1.1 Objetivo do Projeto
