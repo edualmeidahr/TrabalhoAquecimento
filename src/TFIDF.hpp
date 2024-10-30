@@ -12,14 +12,27 @@
 #include <set>
 #include <cmath>
 
-std::string removePontuacaoPadronizaMinuscula(const std::string& linhaLivro);
-std::unordered_set<std::string> lerStopWords(const std::string& nomeArquivo);
-std::string removerStopWords(const std::string& linhaLivro, const std::unordered_set<std::string>& stopwords);
-std::vector<std::string> lerLivro(const std::string& nomeArquivo);
-std::unordered_map<std::string, int> processarDocumento(const std::vector<std::string>& termosDocumento);
-std::unordered_map<std::string, double> calcularIDF(const std::vector<std::unordered_map<std::string, int>>& documentos);
 
-void salvarLivroProcessado(const std::vector<std::string>& livro, const std::string& nomeArquivoSaida);
+const std::unordered_set<std::string> stopwords;
+
+double calcularRelevancia(const std::unordered_map<std::string, int> &tf,
+                          const std::unordered_map<std::string, double> &idf,
+                          const std::vector<std::string> &frasePesquisa);
+
+std::string removePontuacaoPadronizaMinuscula(const std::string &linhaLivro);
+
+void lerStopWords(const std::string &nomeArquivo);
+
+std::string removerStopWords(const std::string &linhaLivro);
+
+std::vector<std::string> lerLivro(const std::string &nomeArquivo);
+
+std::unordered_map<std::string, int> processarDocumento(const std::vector<std::string> &termosDocumento);
+
+std::unordered_map<std::string, double> calcularIDF(
+    const std::vector<std::unordered_map<std::string, int> > &documentos);
+
+void salvarLivroProcessado(const std::vector<std::string> &livro, const std::string &nomeArquivoSaida);
 
 
 #endif // TFIDF_HPP
