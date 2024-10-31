@@ -12,6 +12,7 @@
 #include <set>
 #include <cmath>
 
+std::string NomeLivro(int numero);
 
 const std::unordered_set<std::string> stopwords;
 

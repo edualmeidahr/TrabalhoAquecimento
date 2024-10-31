@@ -106,7 +106,8 @@ std::vector<std::string> lerLivro(const std::string &nomeArquivo) {
 
 std::unordered_map<std::string, int> processarDocumento(const std::vector<std::string> &termosDocumento) {
     std::unordered_map<std::string, int> tf;
-
+    int tam = 0;
+    int deus = 0;
     // Calcula a frequência de cada termo no documento
     for (const auto &frase: termosDocumento) {
         std::istringstream iss(frase); // Cria um fluxo de string para separar as palavras
@@ -114,10 +115,17 @@ std::unordered_map<std::string, int> processarDocumento(const std::vector<std::s
 
         // Extrai cada termo da frase
         while (iss >> termo) {
+            if (termo == "deus") {
+                deus++;
+            }
             tf[termo]++;
+            tam++;
         }
     }
 
+    //std::cout << "Numero de palavras do Livro: " << tam << std::endl;
+
+    //std::cout << "Numero de deus do Livro: " << deus << std::endl;
 
     //Imprime o map
     // for (const auto &par: tf) {
@@ -180,4 +188,13 @@ void salvarLivroProcessado(const std::vector<std::string> &livro, const std::str
 
     arquivoSaida.close();
     std::cout << "Arquivo salvo em: output/" << nomeArquivoSaida << std::endl;
+}
+
+
+std::string NomeLivro(int numero) {
+    std::vector<std::string> livro = {
+        "A mao e a luva", "biblia", "DomCasmurro", "quincas borba", "Semana_Machado_Assis", "terremoto"
+    };
+
+    return livro[numero];
 }

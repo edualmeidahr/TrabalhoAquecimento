@@ -4,6 +4,7 @@
 
 
 int main() {
+
     std::string nomeArquivoEntrada = "input/1.txt"; // Nome do arquivo para leitura
     std::string nomeArquivoSaida = "livro_processado.txt"; // Nome do arquivo de saída
 
@@ -56,7 +57,7 @@ int main() {
     // Salva o resultado processado em um arquivo na pasta "output"
     //salvarLivroProcessado(livro, nomeArquivoSaida);
 
-    std::string prefrase = {"deus nao esta morto, apenas faca o que eu digo Arcebispo"}; // digitar a frase
+    std::string prefrase = {"No dia 23 de Março deste presente anno de 1748 pelas 6"}; // digitar a frase
     std::string frase = removerStopWords(removePontuacaoPadronizaMinuscula(prefrase));
 
     std::istringstream stream(frase);
@@ -82,9 +83,14 @@ int main() {
                   return a.second > b.second;
               });
 
+    //Exibir frase pesquisada
+
+    std::cout << "Frase pesquisada: " << prefrase << std::endl;
+
+
     // Exibir os documentos ordenados por relevância
     for (const auto &[docIndex, relevancia]: relevancias) {
-        std::cout << "Documento " << docIndex << " - Relevancia: " << relevancia << std::endl;
+        std::cout << "Livro: " << NomeLivro(docIndex)  << " - Relevancia: " << relevancia << std::endl;
     }
 
 
