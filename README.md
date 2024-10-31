@@ -20,7 +20,7 @@ Este trabalho busca não só ensinar os fundamentos do TF/IDF, mas também estim
 O projeto consiste em analisar grandes volumes de texto para identificar quais termos são mais relevantes em cada documento. A relevância de uma palavra é determinada pelo quanto ela contribui para o significado do texto e se destaca em relação a outros documentos. Esse processo é crucial para facilitar a busca e a análise temática em diferentes documentos.
 
 Para essa análise, foram selecionadas seis entradas textuais distintas, cada uma representando um documento específico e armazenada em um arquivo `.txt`. Essas entradas incluem:
-- **A Mão e a Luva** - Romance de Machado de Assis.
+- [A Mão e a Luva](/A%20mao%20e%20a%20luva.txt) - Romance de Machado de Assis.
 - **Bíblia** - Texto religioso MUTIO extenso.
 - **Dom Casmurro** - Outra obra de Machado de Assis, famosa por seu enredo psicológico e complexidade de personagens.
 - **Quincas Borba** - Romance de Machado de Assis que explora temas filosóficos, especialmente o conceito de "Humanitismo".
