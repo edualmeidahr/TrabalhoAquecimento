@@ -41,7 +41,135 @@ O processo de análise e ranqueamento é dividido nas seguintes etapas:
 
 ## 3. Estrutura do Código
 
-@bruneido
+### Função calcularIDF
+
+A função calcularIDF calcula o valor IDF (Inverse Document Frequency) para cada termo presente em uma coleção de documentos. Esse valor representa a importância de um termo em relação a todos os documentos da coleção, sendo útil para ranqueamento de relevância em algoritmos como TF-IDF.
+
+Primeiro, a função calcula quantos documentos contêm cada termo único, armazenando esses dados em um unordered_map.
+Em seguida, o IDF de cada termo é calculado usando a fórmula log(totalDocumentos / numDocumentos), onde totalDocumentos é o número total de documentos e numDocumentos é o número de documentos em que o termo específico aparece.
+
+Essa função retorna um mapa (unordered_map) que associa cada termo ao seu respectivo valor de IDF.
+
+![calcularIDF](https://github.com/user-attachments/assets/b1d2b493-b40f-424e-b2c5-9de118c63553)
+
+### Função lerLivro
+
+A função lerLivro lê o conteúdo de um arquivo texto e retorna um vetor de strings, onde cada elemento do vetor representa uma linha processada do arquivo.
+
+A função tenta abrir o arquivo especificado pelo parâmetro nomeArquivo. Em caso de falha, ela retorna um vetor vazio e exibe uma mensagem de erro.
+Em seguida, a função lê cada linha do arquivo, remove pontuações, converte o texto para letras minúsculas, e remove palavras irrelevantes ("stop words").
+Cada linha processada é adicionada ao vetor livro, que é retornado ao final da função.
+
+Essa função facilita a manipulação do conteúdo de um livro, convertendo-o em uma estrutura mais organizada para processamento posterior.
+
+![lerLivro](https://github.com/user-attachments/assets/d839efa3-7b13-4974-8f2a-6de364aeb249)
+
+### Função NomeLivro
+
+A função NomeLivro recebe um número inteiro e retorna o título de um livro correspondente a esse índice.
+
+Um vetor estático de strings chamado livro armazena os títulos de diferentes livros.
+A função usa o índice fornecido (numero) para acessar o título correspondente no vetor e retorna esse título.
+
+Essa função permite obter o nome de um livro com base em um índice, facilitando a identificação de documentos durante o processamento.
+
+![nomeLivro](https://github.com/user-attachments/assets/0592e8cc-3d9d-4a6e-a90b-c5955bd7b6e5)
+
+### Função processarDocumento
+
+A função processarDocumento calcula a frequência de termos em um documento específico, representado por um vetor de strings onde cada string é uma frase.
+
+A função usa um unordered_map para armazenar a contagem de cada termo.
+Para cada frase no documento, ela divide a frase em palavras e contabiliza a frequência de cada uma.
+Como exemplo, se a palavra "deus" aparecer, a contagem dela é incrementada separadamente.
+
+No final, a função retorna o mapa (unordered_map) com a contagem de cada termo, permitindo que a frequência de termos seja usada para o cálculo do TF (Term Frequency) em algoritmos de busca.
+
+![processarDOcumento](https://github.com/user-attachments/assets/00705309-256d-43e3-9fb2-e57c31611062)
+
+### Função calcularRelevancia
+
+A função calcularRelevancia calcula a relevância de uma frase de pesquisa em relação a um documento, utilizando os valores de TF (Term Frequency) e IDF (Inverse Document Frequency). A relevância é calculada somando o produto de TF e IDF para cada termo presente tanto na frase de pesquisa quanto no documento.
+
+Parâmetros:
+
+tf: Um mapa contendo a frequência dos termos no documento.
+idf: Um mapa contendo os valores de IDF para cada termo.
+frasePesquisa: Um vetor de strings contendo os termos da frase de pesquisa.
+
+Descrição:
+
+A função percorre cada termo da frasePesquisa e verifica se ele está presente tanto no mapa tf quanto no idf.
+Caso o termo exista em ambos, calcula-se o valor TF*IDF e soma-se à variável relevancia.
+Retorna o valor da relevância total calculada para a frase de pesquisa no contexto do documento.
+
+![calcularRelevancia](https://github.com/user-attachments/assets/39fbae3e-3ce0-4242-81c8-f1cb742f35e7)
+
+### Função removePontuacaoPadronizaMinuscula
+
+A função removePontuacaoPadronizaMinuscula remove a pontuação de uma linha e converte todos os caracteres para letras minúsculas. Isso padroniza o texto, facilitando o processamento posterior.
+
+Parâmetros:
+
+linhaLivro: Uma string representando uma linha do livro.
+Descrição:
+
+A função percorre cada caractere da string linhaLivro.
+Se o caractere não for pontuação, ele é convertido para minúscula e adicionado à string linhaNormalizada.
+Retorna a string normalizada, contendo apenas letras minúsculas e sem pontuação.
+
+![removePontuação](https://github.com/user-attachments/assets/2fef2d50-35db-415e-a751-7da5a27359c7)
+
+### Função lerStopWords
+
+A função lerStopWords carrega uma lista de stopwords a partir de um arquivo de texto e armazena-as em um conjunto (unordered_set). Stopwords são palavras comuns (como "e", "de", "o") que são geralmente ignoradas em processos de análise de texto.
+
+Parâmetros:
+
+nomeArquivo: Nome do arquivo contendo as stopwords.
+Descrição:
+
+Abre o arquivo especificado. Caso ocorra um erro ao abrir, exibe uma mensagem e encerra o programa.
+Lê cada palavra no arquivo e insere no conjunto stopwords.
+Fecha o arquivo ao final do processo.
+
+![lerStopWord](https://github.com/user-attachments/assets/00df442d-f87c-45bc-bdfd-d6802f725cc9)
+
+### Função removerStopWords
+
+A função removerStopWords remove as stopwords de uma linha de texto, retornando apenas as palavras relevantes.
+
+Parâmetros:
+
+linhaLivro: Uma string representando uma linha do livro.
+Descrição:
+
+A função usa um fluxo de string (istringstream) para dividir a linhaLivro em palavras.
+Para cada palavra, verifica se ela não está presente no conjunto stopwords.
+Se a palavra não for uma stopword, adiciona-a à string resultado.
+Retorna a linha processada, contendo apenas palavras que não são stopwords.
+
+![removerStopWord](https://github.com/user-attachments/assets/53ca1533-2c3b-4bdb-9592-dbc6bdf49d96)
+
+### Função salvarLivroProcessado
+
+A função salvarLivroProcessado salva o conteúdo de um livro processado em um arquivo de saída localizado na pasta "output", ela foi usada unicamente durante o teste dos documentos, de forma 
+a saber se a remoção de stop words e a redução ocorreram de forma correta.
+
+Parâmetros:
+
+livro: Um vetor de strings, onde cada elemento representa uma linha processada do livro.
+nomeArquivoSaida: O nome do arquivo de saída onde o livro processado será salvo.
+Descrição:
+
+Verifica se a pasta output existe; se não, cria a pasta.
+Abre o arquivo de saída na pasta output com o nome especificado. Caso ocorra um erro ao abrir, exibe uma mensagem e encerra a função.
+Escreve cada linha do vetor livro no arquivo.
+Fecha o arquivo após a escrita e exibe a mensagem indicando o local do arquivo salvo.
+
+![salvarLivroProcessado](https://github.com/user-attachments/assets/3ac9981c-5ffe-48a8-bf36-5b45a92595bf)
+
+
 
 ## 4. Desafios e Experiências
 
