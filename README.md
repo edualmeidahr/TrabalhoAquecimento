@@ -21,11 +21,11 @@ O projeto consiste em analisar grandes volumes de texto para identificar quais t
 
 Para essa análise, foram selecionadas seis entradas textuais distintas, cada uma representando um documento específico e armazenada em um arquivo `.txt`. Essas entradas incluem:
 - [A Mão e a Luva](input/A%20mao%20e%20a%20luva.txt) - Romance de Machado de Assis.
-- **Bíblia** - Texto religioso MUTIO extenso.
-- **Dom Casmurro** - Outra obra de Machado de Assis, famosa por seu enredo psicológico e complexidade de personagens.
-- **Quincas Borba** - Romance de Machado de Assis que explora temas filosóficos, especialmente o conceito de "Humanitismo".
-- **Semana** - Texto curto de Machado de Assis, com características de crônica sobre temas cotidianos e culturais.
-- **Terremoto** - Documento histórico que descreve os danos e ruínas causadas por um terremoto que ocorreu na cidade de Valença e em outras regiões vizinhas em 1748.
+- [Bíblia](input/biblia.txt)- Texto religioso MUITO extenso.
+- [Dom Casmurro](input/DomCasmurro.txt) - Outra obra de Machado de Assis, famosa por seu enredo psicológico e complexidade de personagens.
+- [Quincas Borba](input/quincas%20borba.txt) - Romance de Machado de Assis que explora temas filosóficos, especialmente o conceito de "Humanitismo".
+- [Semana](input/Semana_Machado_Assis.txt) - Texto curto de Machado de Assis, com características de crônica sobre temas cotidianos e culturais.
+- [Terremoto](input/terremoto.txt) - Documento histórico que descreve os danos e ruínas causadas por um terremoto que ocorreu na cidade de Valença e em outras regiões vizinhas em 1748.
 
 Essas obras foram escolhidas para proporcionar uma base diversificada para o algoritmo TF-IDF. Este algoritmo avalia a importância de cada palavra em cada documento individual, considerando tanto sua frequência local (TF) quanto sua raridade global (IDF).
 
@@ -203,7 +203,7 @@ Para facilitar o entendimento dos principais conceitos utilizados, desenvolvemos
 
 - **Term Frequency (TF)**: Refere-se à frequência com que um termo aparece em um documento específico. Esse valor representa a importância de um termo dentro de um único documento.
 
-    <img src="https://media.discordapp.net/attachments/1300123706013650966/1300949897465298984/TF.png?ex=6722b382&is=67216202&hm=d0c2b69c87088730878770714ba74af1d7fbf7eb3c55f86216caf47c96294e36&=&format=webp&quality=lossless&width=1118&height=559" alt="TF" width="800" />
+    <img src="https://cdn.discordapp.com/attachments/1187944026578624534/1301702019165323365/TF.png?ex=67256ff9&is=67241e79&hm=64caca2d63b363591b78ae92d0dce91f975682a46b5dec2b92cc944885961700&" alt="TF" width="800" />
 
 - **Inverse Document Frequency (IDF)**: Mede a importância de um termo em relação ao conjunto total de documentos. Quanto mais raro for o termo nos documentos, maior será seu valor de IDF, destacando termos específicos.
 
