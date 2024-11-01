@@ -1,5 +1,5 @@
 # TF-IDF - AEDS II
-![CAPA](https://i.ibb.co/GQBHCGL/ezgif-3-d75e0f657b.gif)
+![CAPA](https://github.com/edualmeidahr/TrabalhoAquecimentoAeds2/blob/main/img/GIF%20AEDS%202%20TFIDF.gif?raw=true)
 
 ## 1. Introdução
 ### 1.1 Objetivo do Projeto
@@ -223,15 +223,15 @@ O sistema desenvolvido permite identificar rapidamente os documentos mais releva
 
 Este projeto utiliza um Makefile para simplificar o processo de compilação e execução. Siga os passos abaixo para compilar, rodar o programa e limpar arquivos temporários:
 
-1. **Clone o repositório e navegue até o diretório do projeto:**
+**Clone o repositório e navegue até o diretório do projeto:**
    ```bash
    git clone https://github.com/edualmeidahr/TrabalhoAquecimentoAeds2
    cd TrabalhoAquecimentoAeds2
-    ```
+   ```
 
-2. No arquivo principal [main.cpp](src/main.cpp), você pode modificar a variável "prefrase" para definir a frase de pesquisa desejada.
+No arquivo principal [main.cpp](src/main.cpp), você pode modificar a variável "prefrase" para definir a frase de pesquisa desejada.
 
-3. Os comandos são:
+Os comandos são:
 
 Comando   | Utilidade
 --------- | ------
