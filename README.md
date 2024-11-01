@@ -170,7 +170,6 @@ Fecha o arquivo após a escrita e exibe a mensagem indicando o local do arquivo 
 ![salvarLivroProcessado](https://github.com/user-attachments/assets/3ac9981c-5ffe-48a8-bf36-5b45a92595bf)
 
 
-
 ## 4. Desafios e Experiências
 
 Os fundamentos de análise assintótica, estudados em AEDS I, foram essenciais para compreender os desafios de desempenho na primeira fase de implementação do projeto. Esse conhecimento mostrou como algoritmos com custos quadráticos O(n²) se tornam ineficientes para grandes entradas, impactando diretamente o tempo de execução.
@@ -216,5 +215,28 @@ Para facilitar o entendimento dos principais conceitos utilizados, desenvolvemos
      <img src="https://cdn.discordapp.com/attachments/1300123706013650966/1300949895947223040/Prancheta_1_copiar_2-1.png?ex=6722b381&is=67216201&hm=5b65e4428fd467b66eb5925f14f7263aa45ff18718da322a2fa13c94cf89274e&" alt="RANQUEAMENTO" width="800" />
      
 ## 6. Conclusão
-*!@*@!*!@*colocar mais coisas.....
-Este projeto forneceu uma experiência prática valiosa com o algoritmo TF-IDF, desde a implementação básica até a otimização para grandes volumes de texto. A análise dos conceitos de eficiência algorítmica demonstrou a importância de escolher estruturas de dados e métodos adequados para o processamento de texto em larga escala. Ao final, o sistema desenvolvido permite identificar rapidamente os documentos mais relevantes para frases de pesquisa, com um modelo eficiente e escalável para aplicação em recuperação de informações.
+Este projeto forneceu uma experiência prática valiosa com o algoritmo TF-IDF, desde a implementação básica até a otimização para grandes volumes de texto. A análise dos conceitos de eficiência algorítmica demonstrou a importância de escolher estruturas de dados e métodos adequados para o processamento de texto em larga escala.
+
+O sistema desenvolvido permite identificar rapidamente os documentos mais relevantes para frases de pesquisa, com um modelo eficiente e escalável para aplicação em recuperação de informações. Ao final, este trabalho reforçou a importância de otimizações, especialmente ao lidar com dados massivos, proporcionando uma base sólida para aprimoramentos futuros e aplicações em cenários reais.
+
+## 7. Como utilizar
+
+Este projeto utiliza um Makefile para simplificar o processo de compilação e execução. Siga os passos abaixo para compilar, rodar o programa e limpar arquivos temporários:
+
+1. **Clone o repositório e navegue até o diretório do projeto:**
+   ```bash
+   git clone https://github.com/edualmeidahr/TrabalhoAquecimentoAeds2
+   cd TrabalhoAquecimentoAeds2
+    ```
+
+2. No arquivo principal [main.cpp](src/main.cpp), você pode modificar a variável "prefrase" para definir a frase de pesquisa desejada.
+
+3. Os comandos são:
+
+Comando   | Utilidade
+--------- | ------
+```make clean``` | Remove os arquivos objetos e o executável gerados.
+```make``` | Compila o código fonte e gera o executável.
+```make run``` | Executa o programa compilado.
+
+
