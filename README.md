@@ -198,21 +198,22 @@ Para facilitar o entendimento dos principais conceitos utilizados, desenvolvemos
 
 - **Stopwords**: Palavras comuns que aparecem frequentemente em textos, mas que possuem pouco valor informativo (ex.: “de”, “a”, “e”). A remoção das stopwords permite focar nas palavras que realmente carregam o significado do texto.
 
-  <img src="https://cdn.discordapp.com/attachments/1300123706013650966/1300949896731430953/STOPWORDS.png?ex=6722b381&is=67216201&hm=0542ecc7a7482cea75895c1d27846dfab84e34d9c250eb349664b13341a2f3e8&" alt="Stopwords" width="800" />
+  <img src="https://media.discordapp.net/attachments/1187944026578624534/1309125130466885642/STOPWORDS.png?ex=67407149&is=673f1fc9&hm=bb920f2792b3e851db7b2ff591e6a9542d4234122e93388e0927779ea1e3ded9&=&format=webp&quality=lossless&width=1340&height=670" alt="Stopwords" width="800" />
 
 - **Term Frequency (TF)**: Refere-se à frequência com que um termo aparece em um documento específico. Esse valor representa a importância de um termo dentro de um único documento.
 
-    <img src="https://cdn.discordapp.com/attachments/1187944026578624534/1301702019165323365/TF.png?ex=67256ff9&is=67241e79&hm=64caca2d63b363591b78ae92d0dce91f975682a46b5dec2b92cc944885961700&" alt="TF" width="800" />
+    <img src="https://media.discordapp.net/attachments/1187944026578624534/1309125127576883220/TF_IDF.png?ex=67407148&is=673f1fc8&hm=4236a656868e55b71c42ad7be094c958f2d5584f4d96432d74f87f97aebc1a25&=&format=webp&quality=lossless&width=1340&height=670" alt="TF" width="800" />
 
 - **Inverse Document Frequency (IDF)**: Mede a importância de um termo em relação ao conjunto total de documentos. Quanto mais raro for o termo nos documentos, maior será seu valor de IDF, destacando termos específicos.
 
-    <img src="https://cdn.discordapp.com/attachments/1300123706013650966/1300949898186981418/IDF.png?ex=6722b382&is=67216202&hm=d294ed90dc2e436e4361b886019fe9be5576dacea3a5135b1a56c3baa45ff401&" alt="IDF" width="800" />
+    <img src="https://media.discordapp.net/attachments/1187944026578624534/1309125129057472606/IDF.png?ex=67407149&is=673f1fc9&hm=b615a54d0e86fdf419905f9ff4e7325639d4c8e4e9a2e55493909188465e3aa8&=&format=webp&quality=lossless&width=1340&height=670" alt="IDF" width="800" />
    
 - **TF-IDF**: Combinação do TF e do IDF para quantificar a relevância de um termo em um documento específico. Esse valor ajuda a identificar as palavras-chave mais importantes para o conteúdo de cada documento.
 
-     <img src="https://cdn.discordapp.com/attachments/1300123706013650966/1300949895166820485/Prancheta_1_copiar_2.png?ex=6722b381&is=67216201&hm=f02e0e1faf44ac186a14b6570158a6c9e1ae43a33adf890a25dc5778383ede77&" alt="IDF" width="800" />
+     <img src="https://media.discordapp.net/attachments/1187944026578624534/1309125127576883220/TF_IDF.png?ex=67407148&is=673f1fc8&hm=4236a656868e55b71c42ad7be094c958f2d5584f4d96432d74f87f97aebc1a25&=&format=webp&quality=lossless&width=1340&height=670" width="800" />
+     
 - **Ranqueamento**: Processo de ordenação dos documentos de acordo com sua relevância para uma frase de pesquisa. Os valores de TF-IDF são somados para cada termo da frase de pesquisa, e os documentos são classificados do mais relevante ao menos relevante.
-     <img src="https://cdn.discordapp.com/attachments/1300123706013650966/1300949895947223040/Prancheta_1_copiar_2-1.png?ex=6722b381&is=67216201&hm=5b65e4428fd467b66eb5925f14f7263aa45ff18718da322a2fa13c94cf89274e&" alt="RANQUEAMENTO" width="800" />
+     <img src="https://media.discordapp.net/attachments/1187944026578624534/1309125129757790218/RANQUEAMENTO.png?ex=67407149&is=673f1fc9&hm=74e7ca1a215d54e13d9d88599a9baaa23fb53b5fe13a876a436b8811009c6e56&=&format=webp&quality=lossless&width=1340&height=670" width="800" />
      
 ## 6. Conclusão
 Este projeto forneceu uma experiência prática valiosa com o algoritmo TF-IDF, desde a implementação básica até a otimização para grandes volumes de texto. A análise dos conceitos de eficiência algorítmica demonstrou a importância de escolher estruturas de dados e métodos adequados para o processamento de texto em larga escala.
